@@ -35,11 +35,13 @@
 ### GPIO 3: Power-Off Signaling (gpio-poweroff)
 - This overlay is used to signal an external power circuit (like this HUT) to cut the main power once the Pi has safely finished its shutdown sequence. 
 - Behavior: The pin will transition to its active state only after the kernel has finished shutting down, ensuring no SD card corruption occurs 
+
+  - active_low=1: The pin is HIGH (3.3V) while the Pi is running and transitions to LOW (0V) once it is safe to cut power
+
 - Configuration: Add this line to your config file:
     
     ``dtoverlay=gpio-poweroff,gpiopin=3,active_low=1``
 
-    active_low=1: The pin is HIGH (3.3V) while the Pi is running and transitions to LOW (0V) once it is safe to cut power
 
  
 ### Config file Location
