@@ -1,22 +1,24 @@
-# Raspberry Pi - Power on and Shutdown button HAT
+# Raspberry Pi - Power On and Shutdown Button HAT
 
-## Mini hut with a push button to **power on** the Rasperry Pi also **power off** after the shutdown sequence finish. 
+## Mini HAT with a Push Button to **Power** the Raspberry Pi **On** and **Off** Safely After the Shutdown Sequence Completes.
+Useful for home devices, like audio players or home theater systems, to avoid having to initiate the shutdown in the user interface, wait, and then cut off the power manually.
 
-## The HUT:
+## The Mini HAT:
 
-<p float="left">
+<p float="center">
 <img src="Docs/front1.jpeg" width="45%">
 <img src="Docs/Rasp_hut.jpeg" width="45%">
 </p>
 
 
-- USB C power connector. Use only this connector to power the Raspberry PI.
+- USB-C power connector. Use only this connector to power the Raspberry Pi.
 - Push button:
   - When the Raspberry Pi is off, a button press powers it on.
-  - When the Raspberry Pi is on, a button press initiates the shutdown sequence, and when it completes cuts the power off. It's not necessary an additional swich in the usb cable, after the shutdown the power is completely off.
-- 5x2 socket to plug on the Raspberry Pi header.  It provides access to the GPIO2, GPIO3 and power pins. 
+  - When the Raspberry Pi is on, a button press initiates the shutdown sequence, and when it completes, cuts the power off.
+  - An additional switch in the USB cable is not necessary; after the shutdown, the power is completely off.
+- 5x2 socket to plug into the Raspberry Pi header. It provides access to GPIO2, GPIO3, and power pins. 
 
-<p float="left">
+<p float="center">
 <img src="Docs/hut_render.jpg" width="45%">
 <img src="Docs/back1.jpeg" width="45%">
 </p>
@@ -34,7 +36,7 @@
 
 ### GPIO 3: Power-Off Signaling (gpio-poweroff)
 - This overlay is used to signal an external power circuit (like this HUT) to cut the main power once the Pi has safely finished its shutdown sequence. 
-- Behavior: The pin will transition to its active state only after the kernel has finished shutting down, ensuring no SD card corruption occurs 
+- Behavior: The pin will transition to its active state (LOW) only after the kernel has finished shutting down, ensuring no SD card corruption occurs 
 
   - active_low=1: The pin is HIGH (3.3V) while the Pi is running and transitions to LOW (0V) once it is safe to cut power
 
@@ -75,7 +77,7 @@ Basic power latch circuit combined with the ***shutdown*** and ***poweroff*** GP
 
 ## Restrictions
 - The total current, including anything connected to the Raspeberry Pi, should not be more than 6A (about 30W), to be on the safe side. The absolute maximum rating of the main mosfet is 7.5A.
-- The HAT covers the first 10 pins of the header, to use two 5V and two GND pins, and also for stability.  It means that GPIO's 2,3,4,14,15 are not available.
+- The HAT covers the first 10 pins of the header, to use two 5V and two GND pins, and also for stability.  It means that the pins of GPIO's 2,3,4,14,15 are not available in the header for other uses.
 
 
 <img src="Docs/Rasp_hut2.jpeg" width="60%">
