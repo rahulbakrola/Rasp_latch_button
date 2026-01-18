@@ -40,12 +40,12 @@ You have to configure **GPIO 2 and 3** in the config.txt file. For power managem
   - The Result: Once the Pi's software is completely halted, it flips the state of a GPIO pin. This is intended to signal an external circuit (like our HAT) that it is now safe to physically cut the electricity to the Pi. 
 
 ### GPIO 2: Shutdown (gpio-shutdown) 
-- Add dtoverlay=gpio-shutdown to your config file to enable GPIO 2 as the shutdown trigger.
+- Add ***dtoverlay=gpio-shutdown*** to your config file to enable GPIO 2 as the shutdown trigger.
 - Configuration: Add this line to your config file:    
     ``dtoverlay=gpio-shutdown,gpio_pin=2,active_low=1,gpio_pull=up``
 
 ### GPIO 3: Power-Off Signaling (gpio-poweroff)
-- Add dtoverlay=gpio-poweroff to your config file to enable GPIO 3 as the poweroff trigger.
+- Add ***dtoverlay=gpio-poweroff*** to your config file to enable GPIO 3 as the poweroff trigger.
 - The pin will transition to its active state (LOW) only after the kernel has finished shutting down, ensuring no SD card corruption occurs 
 - active_low=1: The pin is HIGH (3.3V) while the Pi is running and transitions to LOW (0V) once it is safe to cut power
 - Configuration: Add this line to your config file:    
@@ -97,6 +97,6 @@ The overlays used for shutdown and power-off are supported on almost all models,
 
 Anyway, I have only tested it with a Raspberry Pi 4b.
 
-## There are no power or USB protections in the PCB. **Use at your own risk!**
+### There are no power or USB protections in the PCB. **Use at your own risk!**
 
 
