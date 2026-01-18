@@ -6,7 +6,7 @@
 - When the Raspberry Pi is **on**, a button press initiates the shutdown sequence, and when it completes, cuts the power automatically.
 - An additional switch in the USB cable is not necessary; after the shutdown, the power is completely off.
 
-Only shutdown sometimes is not enough. After the shutdown the Raspberry Pi enters a halted state, the operating system has ceased all activity, but the hardware remains powered. Most models continue to draw power (approx. 1.5W for a Pi 4). The red Power LED often remains lit, and some peripherals, like a DSI display, can remain powered with backlight active.
+Only shutdown sometimes is not enough. After the shutdown the Raspberry Pi enters a halted state, the operating system has ceased all activity, but the hardware remains powered. Most models continue to draw power (up to 1.5W for a Pi 4). The red Power LED often remains lit, and some peripherals, like a DSI display, can remain powered with the backlight active.
 
 This little board is useful for home devices, like audio players or home theater systems, to avoid having to initiate the shutdown in the user interface, wait some time, and then cut off the power manually.
 
