@@ -13,8 +13,8 @@
 - USB C power connector. Use only this connector to power the Raspberry PI.
 - Push button:
   - When the Raspberry Pi is off, a button press powers it on.
-  - When the Raspberry Pi is on, a button press initiates the shutdown sequence, and when it completes cuts the power off. It's not necessary an additinal swich in the usb cable. After shutdown the power is completely off.
-- 5x2 socket to plug into the Raspberry Pi pins header.  It provides access to the GPIO2, GPIO3 and power pins. 
+  - When the Raspberry Pi is on, a button press initiates the shutdown sequence, and when it completes cuts the power off. It's not necessary an additional swich in the usb cable, after the shutdown the power is completely off.
+- 5x2 socket to plug on the Raspberry Pi header.  It provides access to the GPIO2, GPIO3 and power pins. 
 
 <p float="left">
 <img src="Docs/hut_render.jpg" width="45%">
@@ -22,8 +22,6 @@
 </p>
 
 ---
-## The circuit 
-Basic power latch circuit combined with the ***shutdown*** and ***poweroff*** GPIO's to manage the power off sequence.
 
 ## GPIO pins:
 
@@ -60,13 +58,24 @@ dtoverlay=gpio-shutdown,gpio_pin=2,active_low=1,gpio_pull=up
 dtoverlay=gpio-poweroff,gpiopin=3,active_low=1
 ```
 
-## Schematic
+
+## The circuit 
+Basic power latch circuit combined with the ***shutdown*** and ***poweroff*** GPIO's to manage the power off sequence.
 
 <img src="Docs/hut_schematic.jpg" width="90%">
 
+- Before the button is pressed Q1 is off because R1 keeps the gate at the same voltage than the source. There is no power at the 5V pin.
+- When the button is pressed, it brings the gate of Q1 to GND, activating the power.  C1 keeps it active for a short time.
+- When the Rasperry Pi boots it keeps the GPIO 3 (power_off pin) up, keeping Q2 on, what keeps Q1 also on.
+- When the Rasperry Pi is on and the button is pressed again, it sends a LOW signal to the GPIO 2 (sht_dwn pin), what initiates the shut down sequence.
+- When shut down sequence completes, the GPIO 3 (power_off pin) goes LOW, what switchs Q2 off, and therefor Q1 switchs off also, and the power gets cut off.
+
+
+## Restrictions
+- The total current, including anything connected to the Raspeberry Pi, should not be more than 6A (about 30W), to be on the safe side. The absolute maximum rating of the main mosfet is 7.5A.
+- The HAT covers the first 10 pins of the header, to use two 5V and two GND pins, and also for stability.  It means that GPIO's 2,3,4,14,15 are not available.
+
+
 <img src="Docs/Rasp_hut2.jpeg" width="60%">
-
-
-
 
 
