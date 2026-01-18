@@ -60,6 +60,10 @@ dtoverlay=gpio-shutdown,gpio_pin=2,active_low=1,gpio_pull=up
 dtoverlay=gpio-poweroff,gpiopin=3,active_low=1
 ```
 
+## Schematic
+
+<img src="Docs/hut_schematic.jpg" width="90%">
+
 <img src="Docs/Rasp_hut2.jpeg" width="60%">
 
 
