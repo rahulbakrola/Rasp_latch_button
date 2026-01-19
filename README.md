@@ -8,17 +8,16 @@
 
 Only shutdown sometimes is not enough. After the shutdown the Raspberry Pi enters a halted state, the operating system has ceased all activity, but the hardware remains powered. Most models continue to draw power (up to 1.5W for a Pi 4). The red Power LED often remains lit, and some peripherals, like a DSI display, can remain powered with the backlight active.
 
-This little board is useful for home devices, like audio players or home theater systems, to avoid having to initiate the shutdown in the user interface, wait some time, and then cut off the power manually.
-
-If you initiate the shutdown from the device user interface it works the same, after the shutdown sequence, it will cut the power.
-
-## The Mini HAT:
-
 <p float="left">
 <img src="Docs/front1.jpeg" width="45%">
 <img src="Docs/Rasp_hut.jpeg" width="45%">
 </p>
 
+This little board is useful for home devices, like audio players or home theater systems, to avoid having to initiate the shutdown in the user interface, wait some time, and then cut off the power manually.
+
+If you initiate the shutdown from the device user interface it works the same, after the shutdown sequence, it will cut the power.
+
+## The Mini HAT:
 
 - **USB-C power connector**. Use only this connector to power the Raspberry Pi.
 - **Push button**. A push button of any size or type.
